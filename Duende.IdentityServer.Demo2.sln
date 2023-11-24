@@ -5,6 +5,10 @@ VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Duende.IdentityServer.Sqlite", "Duende.IdentityServer.Sqlite\Duende.IdentityServer.Sqlite.csproj", "{A7F52EFA-ACBA-423E-BD23-80F2333F8013}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.API", "Weather.API\Weather.API.csproj", "{009A2857-AA15-49E1-A552-116D8BEE66B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Razor", "Weather.Razor\Weather.Razor.csproj", "{6880737B-D57D-4AA1-9382-CCCA61B4269C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,19 @@ Global
 		{A7F52EFA-ACBA-423E-BD23-80F2333F8013}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7F52EFA-ACBA-423E-BD23-80F2333F8013}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7F52EFA-ACBA-423E-BD23-80F2333F8013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{009A2857-AA15-49E1-A552-116D8BEE66B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{009A2857-AA15-49E1-A552-116D8BEE66B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{009A2857-AA15-49E1-A552-116D8BEE66B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{009A2857-AA15-49E1-A552-116D8BEE66B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6880737B-D57D-4AA1-9382-CCCA61B4269C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6880737B-D57D-4AA1-9382-CCCA61B4269C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6880737B-D57D-4AA1-9382-CCCA61B4269C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6880737B-D57D-4AA1-9382-CCCA61B4269C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FA0BBB3-B1A5-49A7-860E-0FC2B253ABCE}
 	EndGlobalSection
 EndGlobal
