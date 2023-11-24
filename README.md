@@ -68,10 +68,29 @@ dotnet new isaspid -o Duende.IdentityServer.Sqlite
 open the solution in Visual Studio by double-clicking the `Duende.IdentityServer.Demo2.sln` file.
 add existing project `Duende.IdentityServer.Sqlite` to the solution.
 
-install `Duende.IdentityServer.EntityFramework` nuget package.
+uninstall & reinstall existing nuget packages.
+also install `Duende.IdentityServer.EntityFramework` nuget package.
 
 ```shell
-Install-Package Duende.IdentityServer.EntityFramework -Version 6.3.2
+Uninstall-Package Duende.IdentityServer.AspNetIdentity
+Uninstall-Package Duende.IdentityServer.EntityFramework
+Uninstall-Package Microsoft.AspNetCore.Authentication.Google
+Uninstall-Package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore
+Uninstall-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+Uninstall-Package Microsoft.AspNetCore.Identity.UI
+Uninstall-Package Microsoft.EntityFrameworkCore.Sqlite
+Uninstall-Package Microsoft.EntityFrameworkCore.Tools
+Uninstall-Package Serilog.AspNetCore
+
+Install-Package Duende.IdentityServer.AspNetIdentity -Version 6.3.6
+Install-Package Duende.IdentityServer.EntityFramework -Version 6.3.6
+Install-Package Microsoft.AspNetCore.Authentication.Google -Version 6.0.25
+Install-Package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore -Version 6.0.25
+Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore -Version 6.0.25
+Install-Package Microsoft.AspNetCore.Identity.UI -Version 6.0.25
+Install-Package Microsoft.EntityFrameworkCore.Sqlite -Version 6.0.25
+Install-Package Microsoft.EntityFrameworkCore.Tools -Version 6.0.25
+Install-Package Serilog.AspNetCore -Version 6.1.0
 ```
 
 edit `HostingExtensions.cs` file.
@@ -179,15 +198,14 @@ public static class Config
     public static IEnumerable<ApiScope> ApiScopes =>
         new ApiScope[]
         {
-            new ApiScope("weatherApiScope"),
+            new("weatherApiScope"),
         };
 
     public static IEnumerable<Client> Clients =>
         new Client[]
         {
             // m2m client credentials flow client
-            new Client
-            {
+            new() {
                 ClientId = "m2m.client",
                 ClientName = "Client Credentials Client",
 
@@ -198,8 +216,7 @@ public static class Config
             },
 
             // interactive client using code flow + pkce
-            new Client
-            {
+            new() {
                 ClientId = "interactive",
                 ClientSecrets = { new Secret("49C1A7E1-0C79-4A89-A3D6-A37998FB86B0".Sha256()) },
 
@@ -217,7 +234,7 @@ public static class Config
     public static IEnumerable<ApiResource> ApiResources =>
         new ApiResource[]
         {
-            new ApiResource("weatherApiResource")
+            new("weatherApiResource")
             {
                 Scopes = { "weatherApiScope" },
                 ApiSecrets = { new Secret("ScopeSecret".Sha256()) },
